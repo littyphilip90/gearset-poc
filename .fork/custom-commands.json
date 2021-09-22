@@ -1,0 +1,73 @@
+[
+  {
+    "referenceTargets" : [
+
+    ],
+    "action" : {
+      "waitForExit" : true,
+      "path" : "\/bin\/bash",
+      "type" : "process",
+      "args" : "-l .\/tooling\/scripts\/custom-actions\/open.sh",
+      "showOutput" : false
+    },
+    "name" : "Project - Open Salesforce",
+    "target" : "repository"
+  },
+  {
+    "name" : "Project - Reset and Clean Working Directory",
+    "ui" : {
+      "title" : "Reset and Clean Working Directory",
+      "buttons" : [
+        {
+          "action" : {
+            "showOutput" : false,
+            "type" : "process",
+            "path" : "\/bin\/bash",
+            "args" : "-l .\/tooling\/scripts\/custom-actions\/resetAndCleanWorkingDirectory.sh",
+            "waitForExit" : true
+          },
+          "title" : "Yes"
+        },
+        {
+          "title" : "Cancel",
+          "action" : {
+            "type" : "cancel"
+          }
+        }
+      ],
+      "description" : "Are you sure you want to delete *ALL* local changes?"
+    },
+    "target" : "repository",
+    "referenceTargets" : [
+
+    ]
+  },
+  {
+    "name" : "Project - Retrieve",
+    "referenceTargets" : [
+
+    ],
+    "target" : "repository",
+    "action" : {
+      "path" : "\/bin\/bash",
+      "type" : "process",
+      "args" : "-l .\/tooling\/scripts\/custom-actions\/retrieve.sh",
+      "showOutput" : false,
+      "waitForExit" : true
+    }
+  },
+  {
+    "target" : "repository",
+    "action" : {
+      "showOutput" : false,
+      "waitForExit" : true,
+      "args" : "-l .\/tooling\/scripts\/custom-actions\/configure.sh -d",
+      "type" : "process",
+      "path" : "\/bin\/bash"
+    },
+    "referenceTargets" : [
+
+    ],
+    "name" : "Project - Setup connection to Salesforce"
+  }
+]

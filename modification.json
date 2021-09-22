@@ -1,0 +1,108 @@
+{
+	"groups": {
+		"deploy": [
+			{
+				"reference": "addLayoutSortOrder"
+			},
+			{
+				"config": {
+					"regex": "standard-([A-Za-z0-9]+)|standard__([A-Za-z0-9]+)|Lead_Generation|Relationship_Management|Sales_Leadership|Sales_Operations"
+				},
+				"reference": "removePackageMembers"
+			}
+		],
+		"retrieve": [
+			{
+				"reference": "removeObjectLevelFieldHistoryTracking"
+			},
+			{
+				"reference": "removeObjectLevelFeedHistoryTracking"
+			},
+			{
+				"reference": "removeFieldLevelFieldHistoryTracking"
+			},
+			{
+				"reference": "removeFieldLevelFeedHistoryTracking"
+			},
+			{
+				"reference": "removeLayoutSortOrder"
+			},
+			{
+				"reference": "removeFalseFieldPermissions"
+			},
+			{
+				"config": {
+					"userPermissions": [
+						"CanAccessCE",
+						"ChangeDashboardColors",
+						"EditBillingInfo",
+						"ManageRealm",
+						"ManageSandboxes",
+						"SendExternalEmailAvailable",
+						"SubscribeToLightningDashboards"
+					]
+				},
+				"reference": "removePermissionSetUserPermissions"
+			},
+			{
+				"config": {
+					"userPermissions": [
+						"CanAccessCE",
+						"ChangeDashboardColors",
+						"EditBillingInfo",
+						"ManageRealm",
+						"ManageSandboxes",
+						"SendExternalEmailAvailable",
+						"SubscribeToLightningDashboards"
+					]
+				},
+				"reference": "removeProfileUserPermissions"
+			},
+			{
+				"config": {
+					"layouts": [
+						"SocialPost-Social Post Layout"
+					]
+				},
+				"reference": "removeLayoutAssignments"
+			},
+			{
+				"config": {
+					"objects": {
+						"Location": [
+							"All_Locations",
+							"My_Locations"
+						],
+						"ServiceAppointment": [
+							"All_ServiceAppointments",
+							"My_ServiceAppointments"
+						],
+						"ServiceResource": [
+							"All_ServiceResources",
+							"My_ServiceResources"
+						],
+						"ServiceTerritory": [
+							"All_ServiceTerritories",
+							"My_ServiceTerritories"
+						],
+						"WorkOrder": [
+							"All_WorkOrders",
+							"My_WorkOrders"
+						],
+						"WorkType": [
+							"All_WorkTypes",
+							"My_WorkTypes"
+						]
+					}
+				},
+				"reference": "removeListViews"
+			},
+			{
+				"config": {
+					"regex": "Lead_Generation|Relationship_Management|Sales_Leadership|Sales_Operations|standard__([a-zA-Z0-9])+"
+				},
+				"reference": "removeStandardApps"
+			}
+		]
+	}
+}

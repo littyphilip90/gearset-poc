@@ -1,0 +1,108 @@
+image: makepositive/sfdx-ant
+
+definitions:
+  caches:
+    mp-lib: ~/.mp-dev-ops
+    mp-tooling: tooling
+  steps:
+    - step: &ci-validation
+        name: 'CI Validation'
+        caches:
+          - mp-lib
+          - mp-tooling
+        script:
+          - ant test -De=CI
+        artifacts:
+          - logs/*
+          - build-state.properties.local
+    - step: &deploy
+        name: 'Deployment'
+        caches:
+          - mp-lib
+          - mp-tooling
+        script:
+          - ant deploy
+        artifacts:
+          - logs/*
+          - build-state.properties.local
+    - step: &validation
+        name: 'Validate'
+        caches:
+          - mp-lib
+          - mp-tooling
+        script:
+          - ant test
+        artifacts:
+          - logs/*
+          - build-state.properties.local
+    - step: &quick-deploy
+        name: 'Quick Deploy'
+        caches:
+          - mp-lib
+          - mp-tooling
+        script:
+          - ant quickDeploy
+        artifacts:
+          - logs/*
+          - build-state.properties.local
+
+pipelines:
+  custom:
+    create-major-release:
+      - step:
+          name: 'Create Major Release'
+          caches:
+            - mp-lib
+            - mp-tooling
+          script:
+            - ant fetchReleaseBranches
+            - ant createMajorRelease
+    create-minor-release:
+      - step:
+          name: 'Create Minor Release'
+          caches:
+            - mp-lib
+            - mp-tooling
+          script:
+            - ant fetchReleaseBranches
+            - ant createMinorRelease
+    create-patch-release:
+      - step:
+          name: 'Create Patch Release'
+          caches:
+            - mp-lib
+            - mp-tooling
+          script:
+            - ant fetchReleaseBranches
+            - ant createPatchRelease
+  pull-requests:
+    '**':
+      - step: *ci-validation
+  branches:
+    develop:
+      - step: *ci-validation
+    deploy/QA:
+      - step: 
+          <<: *deploy
+          name: 'QA Deployment'
+          deployment: qa
+    deploy/UAT:
+      - step: 
+          <<: *deploy
+          name: 'UAT Deployment'
+          deployment: uat
+    deploy/STAGING:
+      - step: 
+          <<: *deploy
+          name: 'Staging Deployment'
+          deployment: staging
+    master:
+      - step:
+          name: 'Production Preparation'
+          script:
+            - echo "Production Deployment Step 1"
+      - step: 
+          <<: *deploy
+          name: 'Production Deployment'
+          deployment: production
+          trigger: manual

@@ -1,0 +1,30 @@
+Referenced Packages
+.project
+salesforce.schema
+.settings/com.salesforce.ide.core.prefs
+*.bak
+*.orig
+config/*
+*.sublime-project
+*.sublime-settings
+*.sublime-workspace
+temp
+.sfdx
+
+# Build
+*.properties.local
+buildfile*.zip
+public.pem
+public.pem.base64
+signature
+signature.sha256
+tooling.zip
+*.key
+logs
+
+# OS
+__MACOSX
+.DS_Store
+
+# Tooling Install
+tooling/*
