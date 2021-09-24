@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+<fieldPermissions><editable>true</editable><field>Loan_Amount__c.Loan_Amount__c</field><readable>true</readable></fieldPermissions>
 <fieldPermissions><editable>true</editable><field>Mini_Resort__c.Bootcamp_Complete__c</field><readable>true</readable></fieldPermissions>
 <hasActivationRequired>false</hasActivationRequired>
 <label>Minisha</label>
 <objectPermissions><allowCreate>true</allowCreate><allowDelete>true</allowDelete><allowEdit>true</allowEdit><allowRead>true</allowRead><modifyAllRecords>true</modifyAllRecords><object>Hotel_rooms__c</object><viewAllRecords>true</viewAllRecords></objectPermissions>
+<objectPermissions><allowCreate>true</allowCreate><allowDelete>true</allowDelete><allowEdit>true</allowEdit><allowRead>true</allowRead><modifyAllRecords>true</modifyAllRecords><object>Loan_Amount__c</object><viewAllRecords>true</viewAllRecords></objectPermissions>
 <objectPermissions><allowCreate>false</allowCreate><allowDelete>true</allowDelete><allowEdit>true</allowEdit><allowRead>true</allowRead><modifyAllRecords>true</modifyAllRecords><object>Mini_Resort__c</object><viewAllRecords>true</viewAllRecords></objectPermissions>
 <tabSettings><tab>Hotel_rooms__c</tab><visibility>Visible</visibility></tabSettings>
 <tabSettings><tab>Mini_Resort__c</tab><visibility>Visible</visibility></tabSettings>

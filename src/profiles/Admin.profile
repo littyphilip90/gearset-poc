@@ -80,14 +80,17 @@
 <fieldPermissions><editable>true</editable><field>Contact.Phone</field><readable>true</readable></fieldPermissions>
 <fieldPermissions><editable>true</editable><field>Contact.ReportsToId</field><readable>true</readable></fieldPermissions>
 <fieldPermissions><editable>true</editable><field>Contact.Title</field><readable>true</readable></fieldPermissions>
+<fieldPermissions><editable>true</editable><field>Loan_Amount__c.Loan_Amount__c</field><readable>true</readable></fieldPermissions>
 <fieldPermissions><editable>true</editable><field>Mini_Resort__c.Bootcamp_Complete__c</field><readable>true</readable></fieldPermissions>
 <fieldPermissions><editable>true</editable><field>Minisha__c.Garden__c</field><readable>true</readable></fieldPermissions>
 <objectPermissions><allowCreate>true</allowCreate><allowDelete>true</allowDelete><allowEdit>true</allowEdit><allowRead>true</allowRead><modifyAllRecords>true</modifyAllRecords><object>Account</object><viewAllRecords>true</viewAllRecords></objectPermissions>
 <objectPermissions><allowCreate>true</allowCreate><allowDelete>true</allowDelete><allowEdit>true</allowEdit><allowRead>true</allowRead><modifyAllRecords>true</modifyAllRecords><object>Contact</object><viewAllRecords>true</viewAllRecords></objectPermissions>
 <objectPermissions><allowCreate>true</allowCreate><allowDelete>true</allowDelete><allowEdit>true</allowEdit><allowRead>true</allowRead><modifyAllRecords>true</modifyAllRecords><object>Hotel_rooms__c</object><viewAllRecords>true</viewAllRecords></objectPermissions>
+<objectPermissions><allowCreate>true</allowCreate><allowDelete>true</allowDelete><allowEdit>true</allowEdit><allowRead>true</allowRead><modifyAllRecords>true</modifyAllRecords><object>Loan_Amount__c</object><viewAllRecords>true</viewAllRecords></objectPermissions>
 <objectPermissions><allowCreate>true</allowCreate><allowDelete>true</allowDelete><allowEdit>true</allowEdit><allowRead>true</allowRead><modifyAllRecords>true</modifyAllRecords><object>Mini_Resort__c</object><viewAllRecords>true</viewAllRecords></objectPermissions>
 <objectPermissions><allowCreate>true</allowCreate><allowDelete>true</allowDelete><allowEdit>true</allowEdit><allowRead>true</allowRead><modifyAllRecords>true</modifyAllRecords><object>Minisha__c</object><viewAllRecords>true</viewAllRecords></objectPermissions>
 <tabVisibilities><tab>Hotel_rooms__c</tab><visibility>DefaultOn</visibility></tabVisibilities>
+<tabVisibilities><tab>Loan_Amount__c</tab><visibility>DefaultOn</visibility></tabVisibilities>
 <tabVisibilities><tab>Mini_Resort__c</tab><visibility>DefaultOn</visibility></tabVisibilities>
 <tabVisibilities><tab>standard-Account</tab><visibility>DefaultOn</visibility></tabVisibilities>
 <tabVisibilities><tab>standard-Contact</tab><visibility>DefaultOn</visibility></tabVisibilities>
